@@ -18,6 +18,10 @@ public class DemoMapsApp {
         linz.addNachbar(wien);
 
         System.out.println("hasCircle(graz) = " + hasCircle(graz));
+
+        System.out.println("graz.countHops(graz, linz) = " + graz.countHops(graz, linz));
+        System.out.println("graz.countHops(graz, marburg) = " + graz.countHops(graz, marburg));
+        System.out.println("graz.countHops(wien, marburg) = " + wien.countHops(wien, marburg));
     }
 
     public static boolean hasCircle(Ort o) {
@@ -36,8 +40,11 @@ public class DemoMapsApp {
                 return true;
             }
             else {
-                boolean result = hasCircle(start, n, current);
+                /*boolean result = hasCircle(start, n, current);
                 if (result)
+                    return true;
+                */
+                if (hasCircle(start, n, current))
                     return true;
             }
         }
